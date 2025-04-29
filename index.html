@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biodata GitHub</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-gray-800 rounded-2xl shadow-lg w-full max-w-3xl p-8">
+    <div class="flex flex-col md:flex-row items-center">
+      <img src="https://avatars.githubusercontent.com/u/00000000?v=4" alt="Foto Profil" class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-md">
+      <div class="md:ml-8 text-center md:text-left mt-4 md:mt-0">
+        <h1 class="text-3xl font-bold">sptzyy</h1>
+        <p class="text-blue-400">@sptzyy</p>
+        <p class="mt-2 text-gray-300">Web Developer | Open Source Enthusiast | Tech Blogger</p>
+        <div class="mt-4">
+          <a href="https://github.com/sptzyy" class="text-blue-500 hover:underline">github.com/sptzyy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-xl font-semibold mb-4">Statistik GitHub</h2>
+      <canvas id="statsChart" class="w-full h-64"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    const statsChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Repos', 'Followers', 'Stars', 'Commits'],
+        datasets: [{
+          label: 'Statistik',
+          data: [50, 120, 200, 3400], // Ganti dengan data Anda
+          backgroundColor: [
+            '#3b82f6',
+            '#6366f1',
+            '#10b981',
+            '#f59e0b'
+          ],
+          borderRadius: 10
+        }]
+      },
+      options: {
+        animation: {
+          duration: 1500,
+          easing: 'easeOutBounce'
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#d1d5db'
+            },
+            grid: {
+              color: '#374151'
+            }
+          },
+          x: {
+            ticks: {
+              color: '#d1d5db'
+            },
+            grid: {
+              display: false
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
